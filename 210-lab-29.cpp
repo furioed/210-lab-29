@@ -118,6 +118,10 @@ int main() {
                 // Max capacity (stop adding new patients)
                 // Emergency arrivals (add patient to treatment immediately)
                 // Delays (patients spend extra time in stage)
+                        bool delay = rand() % 100 < 30;
+                        bool emergency = rand() % 100 < 10;
+
+
 
             // Wait or pause briefly to simulate passage of time between intervals
 
