@@ -60,6 +60,8 @@ int main() {
     hospital["ER"];      
     hospital["ICU"];
     hospital["Surgery"];
+    hospital["Radiology"];
+    hospital["Pediatrics"];
     // Each department will have an array with three list
     // Index 0: waiting
     // Index 1: treatment
@@ -73,9 +75,8 @@ int main() {
     }
 
         std::string name, department;
-    int stageHours;
-    while (file >> name >> department >> stageHours) {
-        Patient p{name, stageHours, stageHours};
+    while (file >> name >> department ) {
+        Patient p{name, 0, 0};
         hospital[department][0].push_back(p); // Initially all in waiting
     }
     file.close();
@@ -89,7 +90,7 @@ int main() {
 
     // Begin a time-based simulation of hospital flow
 
-        simulateHospital(hospital, 1);
+        simulateHospital(hospital, 5);
 
         // Print summary for this interval
     for (auto& dept : hospital) {
