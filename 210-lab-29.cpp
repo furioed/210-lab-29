@@ -21,14 +21,33 @@ struct Patient {
     // Parameters: map of hospital departments, number of intervals
 
     void simulateHospital(std::map<std::string, std::array<std::list<Patient>, 3>>& hospital, int intervals) {
-    // Placeholder
-    std::cout << "Simulation function called for " << intervals << " intervals.\n";
-}
+for (auto& dept : hospital) {
+        std::string departmentName = dept.first;
+        auto& stages = dept.second;
+
 
 // For departments or areas of the hosital
     // Access array of lists
     // Move patients through stages
     // Print if they changed stages
+
+            // Move one patient from waiting to treatment (if any)
+        if (!stages[0].empty()) {
+            Patient p = stages[0].front();
+            stages[0].pop_front();
+            stages[1].push_back(p);
+            std::cout << "Moved patient " << p.name << " from Waiting to Treatment in " << departmentName << "\n";
+        }
+
+        // Move one patient from treatment to discharge (if any)
+        if (!stages[1].empty()) {
+            Patient p = stages[1].front();
+            stages[1].pop_front();
+            stages[2].push_back(p);
+            std::cout << "Moved patient " << p.name << " from Treatment to Discharge in " << departmentName << "\n";
+        }
+    }
+}
     // If a delay occurs, print that too next to the department
     // Have a small but actual chance for a emergency president 
 
@@ -63,12 +82,25 @@ int main() {
 
     std::cout << "Initial hospital data loaded.\n";
 
-    return 0;
-}
+
+
     // If file does not open, print an error message and exit program
 // Close the file
 
     // Begin a time-based simulation of hospital flow
+
+        simulateHospital(hospital, 1);
+
+        // Print summary for this interval
+    for (auto& dept : hospital) {
+        std::cout << dept.first << " — Waiting: " << dept.second[0].size()
+                  << " | Treatment: " << dept.second[1].size()
+                  << " | Discharge: " << dept.second[2].size() << "\n";
+    }
+
+    return 0;
+
+}
         // For 20 time intervals
             // Iterate through each department in the map
                 // Call the simulation function to update patient stages
