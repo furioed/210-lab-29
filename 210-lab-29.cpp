@@ -1,17 +1,30 @@
 #include <iostream>
+#include <fstream>
 #include <map>
 #include <array>
 #include <list>
 #include <string>
 #include <array>
-#include <stdlib>
-#include <time>
+#include <cstdlib>
+#include <ctime>
 
 // Define a struct to represent a patient
     // Name, hours in a certain stage, hours in the hospital, total hours
 
+struct Patient {
+    std::string name;
+    int hoursInStage;
+    int totalHours;
+};
+
 // Define a function to simulate a hospital time interval
     // Parameters: map of hospital departments, number of intervals
+
+    void simulateHospital(std::map<std::string, std::array<std::list<Patient>, 3>>& hospital, int intervals) {
+    // Placeholder
+    std::cout << "Simulation function called for " << intervals << " intervals.\n";
+}
+
 // For departments or areas of the hosital
     // Access array of lists
     // Move patients through stages
@@ -21,13 +34,37 @@
 
 
 // Main function
+int main() {
     // Initialize map to store hospital department info
+        // Initialize map to store hospital department info
+    std::map<std::string, std::array<std::list<Patient>, 3>> hospital;
+    hospital["ER"];      
+    hospital["ICU"];
+    hospital["Surgery"];
     // Each department will have an array with three list
     // Index 0: waiting
     // Index 1: treatment
     // Index 2: discharge
 
 // Open an external file to read hospital data
+    std::ifstream file("patients.txt");
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open patients.txt\n";
+        return 1;
+    }
+
+        std::string name, department;
+    int stageHours;
+    while (file >> name >> department >> stageHours) {
+        Patient p{name, stageHours, stageHours};
+        hospital[department][0].push_back(p); // Initially all in waiting
+    }
+    file.close();
+
+    std::cout << "Initial hospital data loaded.\n";
+
+    return 0;
+}
     // If file does not open, print an error message and exit program
 // Close the file
 
