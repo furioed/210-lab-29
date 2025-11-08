@@ -74,8 +74,8 @@ int main() {
         return 1;
     }
 
-        std::string name, department;
-    while (file >> name >> department ) {
+        std::string department, name;
+    while (file >> department >> name ) {
         Patient p{name, 0, 0};
 
         if (hospital.find(department) != hospital.end()) {
