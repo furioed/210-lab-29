@@ -1,0 +1,76 @@
+Unit Testing for Hospital Simulation
+
+Description:
+To ensure that our hospital simulation functions correctly, I will conduct unit testing on the `simulateHospital` function. This function moves patients through stages (Waiting, Treatment, Discharge) for each department. 
+
+Unit tests will check the following:
+1. That patients in the Waiting list move correctly to Treatment.
+2. That patients in Treatment move correctly to Discharge.
+
+Driver Program:
+
+#include <iostream>
+#include <map>
+#include <array>
+#include <list>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
+struct Patient {
+    std::string name;
+    int hoursInStage;
+    int totalHours;
+};
+
+void simulateHospital(std::map<std::string, std::array<std::list<Patient>, 3>>& hospital, int intervals) {
+    for (auto& dept : hospital) {
+        std::string departmentName = dept.first;
+        auto& stages = dept.second;
+
+        // Move patient from Waiting to Treatment
+        if (!stages[0].empty()) {
+            Patient p = stages[0].front();
+            stages[0].pop_front();
+            stages[1].push_back(p);
+            std::cout << "Moved patient " << p.name << " from Waiting to Treatment in " << departmentName << "\n";
+        }
+
+        // Move patient from Treatment to Discharge
+        if (!stages[1].empty()) {
+            Patient p = stages[1].front();
+            stages[1].pop_front();
+            stages[2].push_back(p);
+            std::cout << "Moved patient " << p.name << " from Treatment to Discharge in " << departmentName << "\n";
+        }
+    }
+}
+
+int main() {
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
+    std::map<std::string, std::array<std::list<Patient>, 3>> hospital;
+    hospital["ER"];
+    hospital["ICU"];
+    hospital["Surgery"];
+
+    // Add test patients
+    hospital["ER"][0].push_back({"John_Doe", 0, 0});
+    hospital["ER"][0].push_back({"Jane_Smith", 0, 0});
+    hospital["ICU"][0].push_back({"Michael_Brown", 0, 0});
+    hospital["Surgery"][0].push_back({"Olivia_Martinez", 0, 0});
+
+    std::cout << "Initial hospital data loaded.\n";
+
+    // Call function to test
+    simulateHospital(hospital, 1);
+
+    // Print stage counts after simulation
+    for (auto& dept : hospital) {
+        std::cout << dept.first << " — Waiting: " << dept.second[0].size()
+                  << " | Treatment: " << dept.second[1].size()
+                  << " | Discharge: " << dept.second[2].size() << "\n";
+    }
+
+    return 0;
+}
