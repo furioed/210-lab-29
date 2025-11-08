@@ -25,6 +25,9 @@ for (auto& dept : hospital) {
         std::string departmentName = dept.first;
         auto& stages = dept.second;
 
+bool delay = rand() % 100 < 30;
+
+bool emergency = rand() % 100 < 10;
 
 // For departments or areas of the hosital
     // Access array of lists
@@ -37,6 +40,8 @@ for (auto& dept : hospital) {
             stages[0].pop_front();
             stages[1].push_back(p);
             std::cout << "Moved patient " << p.name << " from Waiting to Treatment in " << departmentName << "\n";
+        } else if (delay && !stages[0].empty()) {
+            std::cout << "Patient " << stages[0].front().name << " delayed in Waiting at " << departmentName << "\n";
         }
 
         // Move one patient from treatment to discharge (if any)
@@ -54,6 +59,7 @@ for (auto& dept : hospital) {
 
 // Main function
 int main() {
+        srand(static_cast<unsigned int>(time(nullptr))); 
     // Initialize map to store hospital department info
         // Initialize map to store hospital department info
     std::map<std::string, std::array<std::list<Patient>, 3>> hospital;
@@ -96,7 +102,7 @@ int main() {
 
     // Begin a time-based simulation of hospital flow
 
-        simulateHospital(hospital, 5);
+        simulateHospital(hospital, 5); // THIS WILL BE CHANGED IN BETA
 
         // Print summary for this interval
     for (auto& dept : hospital) {
@@ -108,7 +114,7 @@ int main() {
     return 0;
 
 }
-        // For 20 time intervals
+        // For 20 time intervals 
             // Iterate through each department in the map
                 // Call the simulation function to update patient stages
                 // Print hospital status summary for this time interval
@@ -118,14 +124,12 @@ int main() {
                 // Max capacity (stop adding new patients)
                 // Emergency arrivals (add patient to treatment immediately)
                 // Delays (patients spend extra time in stage)
-                        bool delay = rand() % 100 < 30;
-                        bool emergency = rand() % 100 < 10;
 
 
 
             // Wait or pause briefly to simulate passage of time between intervals
 
-    // End of simulation
+    // End of simulation // WORKING ON THIS
         // Write final hospital data (e.g., total patients treated) to output file
         // Print summary report
 
