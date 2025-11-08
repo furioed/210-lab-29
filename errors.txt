@@ -1,0 +1,324 @@
+These are errors to show proof that I was working on commits, I did origin main on accident
+
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git add . 210-lab-29.cpp proposal.txt
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git init
+Initialized empty Git repository in C:/Users/23mam/OneDrive/Desktop/210-lab-29/.git/
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git add . 210-lab-29.cpp proposal.txt
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git remote add origin https://github.com/furioed/210-lab-29.git
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git branch -M main                                
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git push -u origin main    
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/furioed/210-lab-29.git'
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git commit -m "Proposal and Psuedocode" 
+[main (root-commit) 49dc07f] Proposal and Psuedocode
+ 2 files changed, 57 insertions(+)
+ create mode 100644 210-lab-29.cpp
+ create mode 100644 proposal.txt
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.62 KiB | 829.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/furioed/210-lab-29.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> 
+ *  History restored 
+            git                                                git checkout -b alpha
+>> C:\Users\23mam\OneDrive\Desktop\210-lab-29>     
+Switched to a new branch 'alpha'
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git remote add origin https://github.com/furioed/210-lab-29.git
+error: remote origin already exists.
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git add .                                              
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git commit -m "Update 1"               
+[alpha fd4f3bb] Update 1
+ 2 files changed, 50 insertions(+), 2 deletions(-) 
+ create mode 100644 patients.txt
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>>
+210-lab-29.cpp: In function 'void simulateHospital(std::map<std::__cxx11::basic_string<char>, std::array<std::__cxx11::list<Patient>, 3u> >&, int)':     
+210-lab-29.cpp:35:14: error: 'stages' was not declared in this scope
+         if (!stages[0].empty()) {
+              ^~~~~~
+210-lab-29.cpp:39:92: error: 'departmentName' was not declared in this scope
+             std::cout << "Moved patient " << p.name << " from Waiting to Treatment in " << departmentName << "\n";
+                                                   
+                                         ^~~~~~~~~~~~~~
+210-lab-29.cpp:43:14: error: 'stages' was not declared in this scope
+         if (!stages[1].empty()) {
+              ^~~~~~
+210-lab-29.cpp:47:94: error: 'departmentName' was not declared in this scope
+             std::cout << "Moved patient " << p.name << " from Treatment to Discharge in " << departmentName << "\n";
+                                                   
+                                           ^~~~~~~~~~~~~~
+210-lab-29.cpp: At global scope:
+210-lab-29.cpp:50:1: error: expected declaration before '}' token
+ }
+ ^
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>>
+210-lab-29.cpp:93:5: error: expected unqualified-id before 'for'
+     for (auto& dept : hospital) {
+     ^~~
+210-lab-29.cpp:99:5: error: expected unqualified-id before 'return'
+     return 0;
+     ^~~~~~
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>>
+210-lab-29.cpp: In function 'int main()':
+210-lab-29.cpp:101:13: error: expected '}' at end of input
+     return 0;
+             ^
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>>
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> ./hospital_sim
+>> 
+Initial hospital data loaded.
+ER ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0    
+ICU ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0   
+Surgery ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git add .
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git commit -m "Update 2"                               
+[alpha 7f15516] Update 2
+ 2 files changed, 37 insertions(+), 5 deletions(-) 
+ create mode 100644 hospital_sim.exe
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> ./hospital_sim
+>> 
+Initial hospital data loaded.
+ER ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0    
+ICU ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0   
+Surgery ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+210-lab-29.cpp: In function 'int main()':
+210-lab-29.cpp:77:42: error: expected primary-expression before ')' token
+     while (file >> name >> department >> ) {      
+                                          ^        
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+210-lab-29.cpp: In function 'int main()':
+210-lab-29.cpp:76:42: error: expected primary-expression before ')' token
+     while (file >> name >> department >> ) {      
+                                          ^        
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> ./hospital_sim
+>> 
+Initial hospital data loaded.
+Moved patient Radiology from Waiting to Treatment in Ahmed_Khan
+Moved patient Radiology from Treatment to Discharge in Ahmed_Khan
+Moved patient ER from Waiting to Treatment in Carlos_Ramirez
+Moved patient ER from Treatment to Discharge in Carlos_Ramirez
+Moved patient Surgery from Waiting to Treatment in David_Lee
+Moved patient Surgery from Treatment to Discharge in David_Lee
+Moved patient ICU from Waiting to Treatment in Emily_Clark
+Moved patient ICU from Treatment to Discharge in Emily_Clark
+Moved patient ER from Waiting to Treatment in Jane_Smith
+Moved patient ER from Treatment to Discharge in Jane_Smith
+Moved patient ER from Waiting to Treatment in John_Doe
+Moved patient ER from Treatment to Discharge in John_Doe
+Moved patient Radiology from Waiting to Treatment in Lisa_Wong
+Moved patient Radiology from Treatment to Discharge in Lisa_Wong
+Moved patient Pediatrics from Waiting to Treatment in Mia_Jones
+Moved patient Pediatrics from Treatment to Discharge in Mia_Jones
+Moved patient ICU from Waiting to Treatment in Michael_Brown
+Moved patient ICU from Treatment to Discharge in Michael_Brown
+Moved patient Pediatrics from Waiting to Treatment in Noah_Wilson
+Moved patient Pediatrics from Treatment to Discharge in Noah_Wilson
+Moved patient Surgery from Waiting to Treatment in Olivia_Martinez
+Moved patient Surgery from Treatment to Discharge in Olivia_Martinez
+Ahmed_Khan ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Carlos_Ramirez ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+David_Lee ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+ER ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0    
+Emily_Clark ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+ICU ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0   
+Jane_Smith ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+John_Doe ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Lisa_Wong ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Mia_Jones ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Michael_Brown ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Noah_Wilson ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Olivia_Martinez ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Surgery ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> ./hospital_sim
+>> 
+Initial hospital data loaded.
+Moved patient Radiology from Waiting to Treatment in Ahmed_Khan
+Moved patient Radiology from Treatment to Discharge in Ahmed_Khan
+Moved patient ER from Waiting to Treatment in Carlos_Ramirez
+Moved patient ER from Treatment to Discharge in Carlos_Ramirez
+Moved patient Surgery from Waiting to Treatment in David_Lee
+Moved patient Surgery from Treatment to Discharge in David_Lee
+Moved patient ICU from Waiting to Treatment in Emily_Clark
+Moved patient ICU from Treatment to Discharge in Emily_Clark
+Moved patient ER from Waiting to Treatment in Jane_Smith
+Moved patient ER from Treatment to Discharge in Jane_Smith
+Moved patient ER from Waiting to Treatment in John_Doe
+Moved patient ER from Treatment to Discharge in John_Doe
+Moved patient Radiology from Waiting to Treatment in Lisa_Wong
+Moved patient Radiology from Treatment to Discharge in Lisa_Wong
+Moved patient Pediatrics from Waiting to Treatment in Mia_Jones
+Moved patient Pediatrics from Treatment to Discharge in Mia_Jones
+Moved patient ICU from Waiting to Treatment in Michael_Brown
+Moved patient ICU from Treatment to Discharge in Michael_Brown
+Moved patient Pediatrics from Waiting to Treatment in Noah_Wilson
+Moved patient Pediatrics from Treatment to Discharge in Noah_Wilson
+Moved patient Surgery from Waiting to Treatment in Olivia_Martinez
+Moved patient Surgery from Treatment to Discharge in Olivia_Martinez
+Ahmed_Khan ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Carlos_Ramirez ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+David_Lee ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+ER ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0    
+Emily_Clark ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+ICU ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0   
+Jane_Smith ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+John_Doe ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Lisa_Wong ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Mia_Jones ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Michael_Brown ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Noah_Wilson ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Olivia_Martinez ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 1
+Pediatrics ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+Radiology ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+Surgery ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git add .
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git commit -m "Update 3"
+[alpha ca20bc4] Update 3
+ 2 files changed, 5 insertions(+), 4 deletions(-)  
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> ./hospital_sim
+>> 
+Initial hospital data loaded.
+Moved patient Radiology from Waiting to Treatment in Ahmed_Khan
+Moved patient Radiology from Treatment to Discharge in Ahmed_Khan
+Moved patient ER from Waiting to Treatment in Carlos_Ramirez
+Moved patient ER from Treatment to Discharge in Carlos_Ramirez
+Moved patient Surgery from Waiting to Treatment in David_Lee
+Moved patient Surgery from Treatment to Discharge in David_Lee
+Moved patient ICU from Waiting to Treatment in Emily_Clark
+Moved patient ICU from Treatment to Discharge in Emily_Clark
+Moved patient ER from Waiting to Treatment in Jane_Smith
+Moved patient ER from Treatment to Discharge in Jane_Smith
+Moved patient ER from Waiting to Treatment in John_Doe
+Moved patient ER from Treatment to Discharge in John_Doe
+Moved patient Radiology from Waiting to Treatment in Lisa_Wong
+Moved patient Radiology from Treatment to Discharge in Lisa_Wong
+Moved patient Pediatrics from Waiting to Treatment in Mia_Jones
+Moved patient Pediatrics from Treatment to Discharge in Mia_Jones
+Moved patient ICU from Waiting to Treatment in Michael_Brown
+Moved patient ICU from Treatment to Discharge in Michael_Brown
+Moved patient Pediatrics from Waiting to Treatment in Noah_Wilson
+Moved patient Pediatrics from Treatment to Discharge in Noah_Wilson
+Moved patient Surgery from Waiting to Treatment in Olivia_Martinez
+Moved patient Surgery from Treatment to Discharge in Olivia_Martinez
+Ahmed_Khan ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Carlos_Ramirez ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+David_Lee ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+ER ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0    
+Emily_Clark ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+ICU ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0   
+Jane_Smith ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+John_Doe ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Lisa_Wong ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Mia_Jones ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Michael_Brown ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Noah_Wilson ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Olivia_Martinez ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Pediatrics ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+Radiology ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+Surgery ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> ./hospital_sim
+>> 
+Warning: department John_Doe not recognized for patient ER
+Warning: department Jane_Smith not recognized for patient ER
+Warning: department Carlos_Ramirez not recognized for patient ER
+Warning: department Michael_Brown not recognized for patient ICU
+Warning: department Emily_Clark not recognized for patient ICU
+Warning: department Lisa_Wong not recognized for patient Radiology
+Warning: department Ahmed_Khan not recognized for patient Radiology
+Warning: department Olivia_Martinez not recognized for patient Surgery
+Warning: department David_Lee not recognized for patient Surgery
+Warning: department Mia_Jones not recognized for patient Pediatrics
+Warning: department Noah_Wilson not recognized for patient Pediatrics
+Initial hospital data loaded.
+ER ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0    
+ICU ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0   
+Pediatrics ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+Radiology ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+Surgery ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git add .
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git commit -m "Update 4"
+[alpha fd08a59] Update 4
+ 2 files changed, 7 insertions(+), 1 deletion(-)   
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> ./hospital_sim
+>> 
+Warning: department John_Doe not recognized for patient ER
+Warning: department Jane_Smith not recognized for patient ER
+Warning: department Carlos_Ramirez not recognized for patient ER
+Warning: department Michael_Brown not recognized for patient ICU
+Warning: department Emily_Clark not recognized for patient ICU
+Warning: department Lisa_Wong not recognized for patient Radiology
+Warning: department Ahmed_Khan not recognized for patient Radiology
+Warning: department Olivia_Martinez not recognized for patient Surgery
+Warning: department David_Lee not recognized for patient Surgery
+Warning: department Mia_Jones not recognized for patient Pediatrics
+Warning: department Noah_Wilson not recognized for patient Pediatrics
+Initial hospital data loaded.
+ER ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0    
+ICU ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0   
+Pediatrics ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+Radiology ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+Surgery ΓÇö Waiting: 0 | Treatment: 0 | Discharge: 0
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> g++ -std=c++11 210-lab-29.cpp -o hospital_sim
+>> 
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> ./hospital_sim
+>> 
+Initial hospital data loaded.
+Moved patient John_Doe from Waiting to Treatment in ER
+Moved patient John_Doe from Treatment to Discharge in ER
+Moved patient Michael_Brown from Waiting to Treatment in ICU
+Moved patient Michael_Brown from Treatment to Discharge in ICU
+Moved patient Mia_Jones from Waiting to Treatment in Pediatrics
+Moved patient Mia_Jones from Treatment to Discharge in Pediatrics
+Moved patient Lisa_Wong from Waiting to Treatment in Radiology
+Moved patient Lisa_Wong from Treatment to Discharge in Radiology
+Moved patient Olivia_Martinez from Waiting to Treatment in Surgery
+Moved patient Olivia_Martinez from Treatment to Discharge in Surgery
+ER ΓÇö Waiting: 2 | Treatment: 0 | Discharge: 1    
+ICU ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1   
+Pediatrics ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Radiology ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+Surgery ΓÇö Waiting: 1 | Treatment: 0 | Discharge: 1
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git add .
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git commit -m "Update 5"
+[alpha 87a509d] Update 5
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS C:\Users\23mam\OneDrive\Desktop\210-lab-29>
