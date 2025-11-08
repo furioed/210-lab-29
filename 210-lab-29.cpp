@@ -77,7 +77,13 @@ int main() {
         std::string name, department;
     while (file >> name >> department ) {
         Patient p{name, 0, 0};
-        hospital[department][0].push_back(p); // Initially all in waiting
+
+        if (hospital.find(department) != hospital.end()) {
+            hospital[department][0].push_back(p); // All patients start in Waiting
+        } else {
+            std::cout << "Warning: department " << department << " not recognized for patient " << name << "\n";
+        }
+    
     }
     file.close();
 
