@@ -6,6 +6,9 @@
 #include <string>
 #include <array>
 #include <cstdlib>
+#include <thread>
+#include <chrono>
+#include <windows.h>
 #include <ctime>
 
 // Define a struct to represent a patient
@@ -17,13 +20,24 @@ struct Patient {
     int totalHours;
 };
 
+
 // Define a function to simulate a hospital time interval
     // Parameters: map of hospital departments, number of intervals
+
+const int MAX_WAITING = 5;
+const int MAX_TREATMENT = 3;
 
     void simulateHospital(std::map<std::string, std::array<std::list<Patient>, 3>>& hospital, int intervals) {
 for (auto& dept : hospital) {
         std::string departmentName = dept.first;
         auto& stages = dept.second;
+
+        for (auto& stage : stages) {
+            for (auto& p : stage) {
+                p.hoursInStage++;
+                p.totalHours++;
+            }
+        }
 
 bool delay = rand() % 100 < 30;
             if (delay) {
@@ -123,6 +137,7 @@ for (int i = 0; i < totalIntervals; ++i) {
                   << " | Discharge: " << dept.second[2].size() << "\n";
     }
 
+Sleep(1000);
 
 }
     return 0;
