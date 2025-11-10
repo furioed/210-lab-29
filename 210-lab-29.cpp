@@ -110,7 +110,11 @@ int main() {
 
     // Begin a time-based simulation of hospital flow
 
-        simulateHospital(hospital, 5); // THIS WILL BE CHANGED IN BETA
+int totalIntervals = 20;  // 20 time intervals
+for (int i = 0; i < totalIntervals; ++i) {
+    std::cout << "\n=== Time Interval " << i + 1 << " ===\n";
+
+    simulateHospital(hospital, 1); // THIS WILL BE CHANGED IN BETA
 
         // Print summary for this interval
     for (auto& dept : hospital) {
@@ -119,6 +123,8 @@ int main() {
                   << " | Discharge: " << dept.second[2].size() << "\n";
     }
 
+
+}
     return 0;
 
 }
