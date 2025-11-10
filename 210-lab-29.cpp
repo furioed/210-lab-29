@@ -48,7 +48,7 @@ bool delay = rand() % 100 < 30;
             }
 
 bool emergency = rand() % 100 < 10;
-            if (emergency) {
+             if (emergency && stages[1].size() < MAX_TREATMENT) {
                 Patient emergencyPatient{"Emergency_" + departmentName, 0, 0};
                 stages[1].push_back(emergencyPatient);
                 std::cout << "Emergency patient added to Treatment in " << departmentName << ".\n";
@@ -61,7 +61,7 @@ bool emergency = rand() % 100 < 10;
     // Print if they changed stages
 
             // Move one patient from waiting to treatment (if any)
-        if (!stages[0].empty()) {
+            if (!stages[0].empty() && stages[1].size() < MAX_TREATMENT) {
             Patient p = stages[0].front();
             stages[0].pop_front();
             stages[1].push_back(p);
