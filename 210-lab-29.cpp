@@ -94,6 +94,11 @@ int main() {
     hospital["Surgery"];
     hospital["Radiology"];
     hospital["Pediatrics"];
+
+    for (auto& dept : hospital) {
+    totalTreated[dept.first] = 0;
+    totalEmergencies[dept.first] = 0;
+}
     // Each department will have an array with three list
     // Index 0: waiting
     // Index 1: treatment
