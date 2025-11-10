@@ -20,6 +20,8 @@ struct Patient {
     int totalHours;
 };
 
+std::map<std::string, int> totalTreated;
+std::map<std::string, int> totalEmergencies;
 
 // Define a function to simulate a hospital time interval
     // Parameters: map of hospital departments, number of intervals
