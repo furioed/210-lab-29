@@ -1,2 +1,4 @@
 1. multiple #include <array> (just removed it)
+2. line 39 added so discharged patients can't randomly increase
+
 

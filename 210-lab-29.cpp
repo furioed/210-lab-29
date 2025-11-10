@@ -36,11 +36,12 @@ for (auto& dept : hospital) {
 
         for (auto& stage : stages) {
             for (auto& p : stage) {
+                if (&stage != &stages[2]) {
                 p.hoursInStage++;
                 p.totalHours++;
             }
         }
-
+    }
 bool delay = rand() % 100 < 30;
             if (delay) {
                 std::cout << "Delay in " << departmentName << " this hour (no patient movement).\n";
