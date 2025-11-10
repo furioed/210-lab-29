@@ -30,6 +30,7 @@ const int MAX_WAITING = 5;
 const int MAX_TREATMENT = 3;
 
     void simulateHospital(std::map<std::string, std::array<std::list<Patient>, 3>>& hospital, int intervals) {
+for (int i = 0; i < intervals; ++i) {
 for (auto& dept : hospital) {
         std::string departmentName = dept.first;
         auto& stages = dept.second;
@@ -79,6 +80,8 @@ bool emergency = rand() % 100 < 10;
         }
     }
 }
+
+    }
     // If a delay occurs, print that too next to the department
     // Have a small but actual chance for a emergency president 
 
