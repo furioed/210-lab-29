@@ -111,7 +111,11 @@ int main() {
         Patient p{name, 0, 0};
 
         if (hospital.find(department) != hospital.end()) {
+            if (hospital[department][0].size() < MAX_WAITING) {
             hospital[department][0].push_back(p); // All patients start in Waiting
+       } else {
+                std::cout << "Waiting area full in " << department << ". Patient " << name << " cannot enter.\n";
+            }
         } else {
             std::cout << "Warning: department " << department << " not recognized for patient " << name << "\n";
         }
