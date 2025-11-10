@@ -62,7 +62,7 @@ bool emergency = rand() % 100 < 10;
     // Print if they changed stages
 
             // Move one patient from waiting to treatment (if any)
-            if (!stages[0].empty() && stages[1].size() < MAX_TREATMENT) {
+             while (!stages[0].empty() && stages[1].size() < MAX_TREATMENT)
             Patient p = stages[0].front();
             stages[0].pop_front();
             stages[1].push_back(p);
@@ -71,7 +71,7 @@ bool emergency = rand() % 100 < 10;
         }
 
         // Move one patient from treatment to discharge (if any)
-        if (!stages[1].empty()) {
+        while (!stages[1].empty()) {
             Patient p = stages[1].front();
             stages[1].pop_front();
             stages[2].push_back(p);
@@ -116,6 +116,7 @@ int main() {
 
         std::string department, name;
     while (file >> department >> name ) {
+        std::getline(file, name);
         Patient p{name, 0, 0};
 
         if (hospital.find(department) != hospital.end()) {
