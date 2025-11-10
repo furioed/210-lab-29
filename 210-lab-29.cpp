@@ -50,6 +50,7 @@ bool emergency = rand() % 100 < 10;
                 Patient emergencyPatient{"Emergency_" + departmentName, 0, 0};
                 stages[1].push_back(emergencyPatient);
                 std::cout << "Emergency patient added to Treatment in " << departmentName << ".\n";
+                totalEmergencies[departmentName]++;
             }
 
 // For departments or areas of the hosital
@@ -72,6 +73,7 @@ bool emergency = rand() % 100 < 10;
             stages[1].pop_front();
             stages[2].push_back(p);
             std::cout << "Moved patient " << p.name << " from Treatment to Discharge in " << departmentName << "\n";
+            totalTreated[departmentName]++;
         }
     }
 }
@@ -130,13 +132,16 @@ for (int i = 0; i < totalIntervals; ++i) {
 
     simulateHospital(hospital, 1); // THIS WILL BE CHANGED IN BETA
 
-        // Print summary for this interval
-    for (auto& dept : hospital) {
-        std::cout << dept.first << " — Waiting: " << dept.second[0].size()
-                  << " | Treatment: " << dept.second[1].size()
-                  << " | Discharge: " << dept.second[2].size() << "\n";
-    }
-
+    std::cout << "\n=== FINAL REPORT ===\n";
+for (auto& dept : hospital) {
+    std::cout << dept.first
+              << " | Treated: " << totalTreated[dept.first]
+              << " | Emergencies: " << totalEmergencies[dept.first]
+              << " | Waiting: " << dept.second[0].size()
+              << " | Treatment: " << dept.second[1].size()
+              << " | Discharged: " << dept.second[2].size()
+              << "\n";
+}
 Sleep(1000);
 
 }
@@ -161,5 +166,6 @@ Sleep(1000);
     // End of simulation // WORKING ON THIS
         // Write final hospital data (e.g., total patients treated) to output file
         // Print summary report
+
 
 // End of main function
