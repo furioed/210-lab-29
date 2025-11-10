@@ -5,3 +5,6 @@
 5. line 74 edited so multiple patients can be discharged
 6. added ticked time with line 160 and #include <windows.h> so there's intentional delay with each time interval, to where it's easier to read
 7. Final report added in line 150 so everything is tracked present and past in each department
+8. In line 123, max capacity added in waiting room to avoid unrealistic flow
+9. In line 65, max capacity was added in treatment phase to avoid unrealistic flow
+10. In patients.txt, more patients were added to test max capacities
