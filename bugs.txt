@@ -1,4 +1,7 @@
 1. multiple #include <array> (just removed it)
 2. line 39 added so discharged patients can't randomly increase
-
-
+3. line 119 added so multi-word file can be added 
+4. line 65 edited so multiple patients can be in the treatment phase
+5. line 74 edited so multiple patients can be discharged
+6. added ticked time with line 160 and #include <windows.h> so there's intentional delay with each time interval, to where it's easier to read
+7. Final report added in line 150 so everything is tracked present and past in each department
